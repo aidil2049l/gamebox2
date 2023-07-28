@@ -37,10 +37,7 @@ jobs:
           name: php-app
           path: .
           
-      - name: Credentials
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
 
   deploy:
     runs-on: ubuntu-latest
@@ -63,3 +60,8 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8F9A9D7E719945F98B5CFE4528A8F1E4 }}
           package: .
+          
+      - name: Credentials
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
