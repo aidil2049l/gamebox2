@@ -21,7 +21,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: apache-latest
 
     steps:
       - uses: actions/checkout@v3
@@ -63,7 +63,7 @@ jobs:
           path: .
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: apache-latest
     needs: build
     environment:
       name: 'production'
